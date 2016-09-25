@@ -1,0 +1,4 @@
+.tags
+*pycache*
+*.pyc*
+*.DS_Store*
