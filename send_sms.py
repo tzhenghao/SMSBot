@@ -2,7 +2,7 @@
 # Email: tanzhao@umich.edu
 
 import sys
-import sms
+import SMS
 
 if len(sys.argv) != 6:
   sys.exit('Invalid arguments. Please rerun the script')
@@ -14,7 +14,7 @@ to = sys.argv[4]
 smsBody = sys.argv[5]
 
 print('Setting up phone numbers and logging in...')
-sms = sms.SMS(accountSID, authToken)
+sms = SMS.SMS(accountSID, authToken)
 
 print('Sending SMS...')
 
