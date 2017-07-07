@@ -23,7 +23,9 @@ class SMS(object):
         try:
             message = self.twilioCli.messages.create(body=smsBody, from_=from_, to=to)
         except TwilioRestException as e:
-            sys.exit("SMS error: %s" % str(e))
+            twilio_error_msg = "Twilio Error Code: %s, Status: %s, Message: %s" % (e.code, e.status, e.msg)
+            print(twilio_error_msg)
+            sys.exit(1)
 
     def enforceValidSMSBody(self, smsBody):
         if len(smsBody) > 160:
